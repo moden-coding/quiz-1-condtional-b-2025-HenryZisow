@@ -25,32 +25,31 @@ public class App {
 
         System.out.println("Give a whole number:");
         int x = Integer.valueOf(scanner.nextLine());
-        if (x % 2 == 0) {
+        if (x == 0) {
+            System.out.println("ZERO");
+        } else if (x % 2 == 0) {
             System.out.println(x + " is even.");
-        }
-        if (x % 2 != 0) {
+        } else {
             System.out.println(x + " is odd.");
         }
         System.out.println("Give a second whole number:");
         int total = Integer.valueOf(scanner.nextLine());
         if (total <= 0) {
             System.out.println("Error");
-        }
-        if (total > 0) {
+        } else {
             System.out.println(x + "/" + total + " is " + (1.0 * x / total));
 
-        
-        } 
-        
-        if (x < 0 && x > 100) {
-            System.out.println("Wrong number!");
         }
-        if ((x >= 0 && x <= 100) && (x%2!=0 && x%3!=0 && x%5!=0 && x%7!=0)) {
-            System.out.println(x + " is a prime number.");
-        }
-        else {
-             System.out.println(x + " is not a prime number.");
 
+        if (x < 0 || x > 100) {
+            System.out.println("Wrong number!");
+        } else if (x == 2 || x == 3 || x == 5 || x == 7) {
+            System.out.println(x + " is a prime number.");
+        } else if (x % 2 != 0 && x % 3 != 0 && x % 5 != 0 && x % 7 != 0) {
+            System.out.println(x + " is a prime number.");
+        } else {
+            System.out.println(x + " is not a prime number.");
         }
+
     }
 }
